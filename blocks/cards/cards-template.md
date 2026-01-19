@@ -9,7 +9,7 @@ Grid of cards displaying content with images, titles, descriptions, and call-to-
 **Design URL:** Figma MyAstrazeneca Design
 **Component:** Therapeutic Area Cards
 **Node ID:** 3970:58662
-**Variants:** default, therapeutic
+**Variants:** default, therapeutic, therapeutic (cols-2), therapeutic (cols-3), therapeutic (cols-4)
 
 ## Structure
 
@@ -21,10 +21,10 @@ Each card contains:
 
 ## Markdown Syntax
 
-### Therapeutic Variant (3 cards)
+### Therapeutic Variant (3 cards, fixed 3 columns)
 
 ```markdown
-| Cards (therapeutic) |
+| Cards (therapeutic cols-3) |
 |---------------------|
 | ![Card Image](./images/therapeutic-card.jpg) |
 | ### Teaser Title |
@@ -49,6 +49,28 @@ Repeat the row pattern for each card:
 | ### Card Title 3 |
 | Description text for card 3. |
 | [Learn More](#) |
+```
+
+### Therapeutic Variant (2 columns, fixed)
+
+```markdown
+| Cards (therapeutic cols-2) |
+|---|---|
+| ![Card 1](./images/card1.jpg) | ![Card 2](./images/card2.jpg) |
+| ### Card Title 1 | ### Card Title 2 |
+| Description text for card 1. | Description text for card 2. |
+| [Learn More](#) | [Learn More](#) |
+```
+
+### Therapeutic Variant (4 columns, fixed)
+
+```markdown
+| Cards (therapeutic cols-4) |
+|---|---|---|---|
+| ![Card 1](./images/card1.jpg) | ![Card 2](./images/card2.jpg) | ![Card 3](./images/card3.jpg) | ![Card 4](./images/card4.jpg) |
+| ### Card Title 1 | ### Card Title 2 | ### Card Title 3 | ### Card Title 4 |
+| Description text for card 1. | Description text for card 2. | Description text for card 3. | Description text for card 4. |
+| [Learn More](#) | [Learn More](#) | [Learn More](#) | [Learn More](#) |
 ```
 
 ### Default Cards (2 columns)
@@ -96,6 +118,9 @@ Repeat the row pattern for each card:
 |---------|-------|-------------|
 | Default | `.cards` | Standard card grid with 4:3 images |
 | Therapeutic | `.cards.therapeutic` | Square images, enhanced styling, AstraZeneca branding |
+| Therapeutic, fixed 2-col | `.cards.therapeutic.cols-2` | Forces two columns (grid) with responsive step-down |
+| Therapeutic, fixed 3-col | `.cards.therapeutic.cols-3` | Forces three columns (grid) with responsive step-down |
+| Therapeutic, fixed 4-col | `.cards.therapeutic.cols-4` | Forces four columns (grid), relaxes min-width to avoid overflow; steps down to 2 then 1 on smaller screens |
 
 ## Container Styling
 
