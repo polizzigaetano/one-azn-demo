@@ -9,7 +9,7 @@ Grid of cards displaying content with images, titles, descriptions, and call-to-
 **Design URL:** Figma MyAstrazeneca Design
 **Component:** Therapeutic Area Cards
 **Node ID:** 3970:58662
-**Variants:** default, therapeutic, therapeutic (cols-2), therapeutic (cols-3), therapeutic (cols-4)
+**Variants:** default, therapeutic, therapeutic cols-2, therapeutic cols-3, therapeutic cols-4
 
 ## Structure
 
