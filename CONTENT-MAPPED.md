@@ -19,12 +19,13 @@ Project-specific content mapping patterns and learnings for EDS migrations.
 ```markdown
 | Cards (therapeutic, cols-4) |  |
 |---|---|
-| ![alt](/content/images/image.png) | **Card Title**<br><br>Description text here.<br><br>[Call to Action](https://link-url) |
+| ![alt](/content/images/image.png) | **Card Title**<br><br>Description text here. |
 ```
 
 **Key Rules:**
+- **Do NOT include CTA links** - Cards should not have "Mehr erfahren" or similar call-to-action buttons
 - Use `**bold**` for titles (NOT `###` markdown headings - they don't work in tables)
-- Use `<br><br>` for line breaks between title, description, and CTA
+- Use `<br><br>` for line breaks between title and description
 - Column options: `cols-2`, `cols-3`, `cols-4`
 
 ### accordion-oneaz Block (PREFERRED over accordion)
@@ -142,8 +143,9 @@ curl -o content/images/image-name.png "https://source-cdn.com/path/to/image.png"
 
 ### Cards Row Template
 ```markdown
-| ![Image Alt](/content/images/image.png) | **Title**<br><br>Description text.<br><br>[CTA Text](https://url) |
+| ![Image Alt](/content/images/image.png) | **Title**<br><br>Description text. |
 ```
+> **Note:** Do not include CTA links in cards - they should only have image, title, and description.
 
 ---
 
@@ -167,6 +169,7 @@ curl -o content/images/image-name.png "https://source-cdn.com/path/to/image.png"
 | Session timeout | Batch asset downloads after authentication |
 | Generic teaser images | Note when multiple cards share same image for content authors |
 | **Used generic block** | **Always check for branded variants (`-oneaz`, `-therapeutic`) before using generic blocks** |
+| **CTA in cards** | **Do NOT migrate CTA links in cards blocks - cards should only have image, title, and description** |
 
 ---
 
@@ -234,7 +237,7 @@ curl -o content/images/image-name.png "https://source-cdn.com/path/to/image.png"
 
 **Content Migrated:**
 - 16 article cards about Systemischer Lupus Erythematodes (SLE)
-- Each card: image, title, description, "Mehr erfahren" CTA
+- Each card: image, title, description (CTAs removed per design decision)
 
 **Images Downloaded:**
 - `teaser.png` - Generic Lupus Perspectives teaser
@@ -250,6 +253,7 @@ curl -o content/images/image-name.png "https://source-cdn.com/path/to/image.png"
 1. External images blocked → Downloaded locally
 2. Initial 3-col layout → Changed to 4-col per user request
 3. Session expiration → Re-authenticated mid-workflow
+4. CTA links removed → Cards should not include "Mehr erfahren" CTAs per design decision
 
 ---
 

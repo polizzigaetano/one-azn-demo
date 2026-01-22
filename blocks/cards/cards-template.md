@@ -17,7 +17,7 @@ Each card contains:
 - Image (square aspect ratio for therapeutic variant)
 - Title (h3)
 - Description paragraph
-- Button/CTA link
+- Button/CTA link (optional)
 
 ## Markdown Syntax
 
@@ -71,6 +71,14 @@ Repeat the row pattern for each card:
 | ### Card Title 1 | ### Card Title 2 | ### Card Title 3 | ### Card Title 4 |
 | Description text for card 1. | Description text for card 2. | Description text for card 3. | Description text for card 4. |
 | [Learn More](#) | [Learn More](#) | [Learn More](#) | [Learn More](#) |
+```
+
+### Therapeutic Variant without CTA
+
+```markdown
+| Cards (therapeutic, cols-4) |  |
+|---|---|
+| ![Card Image](./images/card.jpg) | **Card Title** <br><br> Description text for the card without a CTA button. |
 ```
 
 ### Default Cards (2 columns)
