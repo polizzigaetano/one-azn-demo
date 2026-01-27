@@ -66,11 +66,7 @@
 
 /* Accordion Item Body */
 .accordion-section details .accordion-item-body {
-  padding: var(--accordion-section-slot-padding-y) var(--accordion-section-slot-padding-x);
   margin-bottom: var(--accordion-section-panel-padding-y);
-  background-color: var(--accordion-section-slot-bg);
-  border: var(--accordion-section-slot-border-width) var(--accordion-section-slot-border-style) var(--accordion-section-slot-border-color);
-  border-radius: var(--accordion-section-slot-border-radius);
 }
 
 /* Hover and focus states */

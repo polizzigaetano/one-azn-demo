@@ -36,7 +36,7 @@ main > .section.hero-container > .hero-wrapper {
   width: 100%;
   max-width: 100vw; /* FIXED: Constrain to viewport width to prevent horizontal scroll */
   min-height: var(--hero-min-height-mobile);
-  padding: var(--hero-padding-y) var(--hero-padding-x);
+  padding: var(--hero-padding-y) 10px; /* 10px horizontal padding */
   gap: var(--hero-content-gap);
   background-color: var(--hero-background-color);
   text-align: var(--hero-text-align);
@@ -102,7 +102,10 @@ main > .section.hero-container > .hero-wrapper {
   display: var(--hero-display);
   flex-direction: var(--hero-flex-direction);
   gap: var(--hero-content-gap);
+  width: 100%;
   max-width: var(--hero-content-max-width);
+  margin: 0 auto;
+  padding: 0 10px; /* 10px horizontal padding */
   opacity: var(--hero-content-opacity);
 }
 
@@ -117,6 +120,8 @@ main > .section.hero-container > .hero-wrapper {
   max-width: none; /* FIXED: Override content max-width for image container */
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .hero picture {
@@ -150,7 +155,7 @@ main > .section.hero-container > .hero-wrapper {
 
 @media (width >= 600px) {
   .hero {
-    padding: var(--hero-tablet-padding-y) var(--hero-tablet-padding-x);
+    padding: var(--hero-tablet-padding-y) 10px; /* 10px horizontal padding */
   }
 
   .hero h1,
@@ -174,7 +179,11 @@ main > .section.hero-container > .hero-wrapper {
 @media (width >= 900px) {
   .hero {
     min-height: var(--hero-min-height);
-    padding: var(--hero-desktop-padding-y) var(--hero-desktop-padding-x);
+    padding: var(--hero-desktop-padding-y) 10px; /* 10px horizontal padding */
+  }
+
+  .hero > div {
+    padding: 0 10px; /* 10px horizontal padding */
   }
 }
 
