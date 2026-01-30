@@ -10,32 +10,8 @@
     <meta name="robots" content="noindex" />
     <base href="/" />
 
-    <!-- Import map for Spectrum Web Components from CDN -->
-    <script type="importmap">
-      {
-        "imports": {
-          "@spectrum-web-components/": "https://cdn.jsdelivr.net/npm/@spectrum-web-components/"
-        }
-      }
-    </script>
-
-    <!-- Spectrum 2 Web Components -->
-    <script type="module">
-      import '@spectrum-web-components/theme/sp-theme.js';
-      import '@spectrum-web-components/theme/spectrum-two/scale-medium.js';
-      import '@spectrum-web-components/theme/spectrum-two/theme-light.js';
-      import '@spectrum-web-components/button/sp-button.js';
-      import '@spectrum-web-components/badge/sp-badge.js';
-      import '@spectrum-web-components/divider/sp-divider.js';
-      import '@spectrum-web-components/checkbox/sp-checkbox.js';
-      import '@spectrum-web-components/progress-circle/sp-progress-circle.js';
-      import '@spectrum-web-components/action-button/sp-action-button.js';
-      import '@spectrum-web-components/textfield/sp-textfield.js';
-      import '@spectrum-web-components/picker/sp-picker.js';
-      import '@spectrum-web-components/menu/sp-menu.js';
-      import '@spectrum-web-components/menu/sp-menu-item.js';
-      import '@spectrum-web-components/avatar/sp-avatar.js';
-    </script>
+    <!-- Spectrum Web Components from JSPM CDN (recommended by Adobe) -->
+    <script src="https://jspm.dev/@spectrum-web-components/bundle/elements.js" type="module" async></script>
 
     <style>
       html,
@@ -344,6 +320,31 @@
         font-weight: 700;
         margin: 0 0 20px;
         color: #2c2c2c;
+      }
+
+      .approval-section {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #e1e1e1;
+      }
+
+      .approval-button-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .approval-status {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 14px;
+      }
+
+      .approval-status.success {
+        color: #2d9d78;
+      }
+
+      .approval-status.error {
+        color: #d7373f;
       }
 
       .field-with-actions {
@@ -962,15 +963,159 @@
               </div>
             </div>
           </div>
+
+          ${renderApprovalButton(task, previewUrl)}
         `
       }
+
+      function isTaskAssociatedWithCurrentPage(previewUrl) {
+        // #region agent log
+        console.log('[DEBUG H1] isTaskAssociatedWithCurrentPage entry:', { previewUrl });
+        // #endregion
+        if (!previewUrl) {
+          // #region agent log
+          console.log('[DEBUG H1] previewUrl is empty, returning false');
+          // #endregion
+          return false
+        }
+        
+        const params = new URLSearchParams(window.location.search)
+        const referrer = params.get('referrer') || document.referrer
+        
+        // #region agent log
+        console.log('[DEBUG H2] Referrer values:', { referrer, queryParamReferrer: params.get('referrer'), documentReferrer: document.referrer });
+        // #endregion
+        
+        if (!referrer) {
+          // #region agent log
+          console.log('[DEBUG H2] referrer is empty, returning false');
+          // #endregion
+          return false
+        }
+        
+        // Compare the preview URL with the referrer
+        try {
+          const previewUrlObj = new URL(previewUrl)
+          const referrerUrlObj = new URL(referrer)
+          
+          // #region agent log
+          console.log('[DEBUG H3] URL comparison:', { previewHostname: previewUrlObj.hostname, previewPathname: previewUrlObj.pathname, referrerHostname: referrerUrlObj.hostname, referrerPathname: referrerUrlObj.pathname });
+          // #endregion
+          
+          // Compare pathname and hostname (ignore protocol, query params, and hash)
+          const result = previewUrlObj.hostname === referrerUrlObj.hostname && 
+                 previewUrlObj.pathname === referrerUrlObj.pathname
+          // #region agent log
+          console.log('[DEBUG H3] URL match result:', result);
+          // #endregion
+          return result
+        } catch (e) {
+          // If URL parsing fails, do a simple string comparison
+          return previewUrl === referrer || referrer.includes(previewUrl) || previewUrl.includes(referrer)
+        }
+      }
+
+      function renderApprovalButton(task, previewUrl) {
+        // #region agent log
+        console.log('[DEBUG H4] renderApprovalButton called:', { taskId: task?.ID, taskName: task?.name, previewUrl });
+        // #endregion
+        
+        const isAssociated = isTaskAssociatedWithCurrentPage(previewUrl)
+        
+        // #region agent log
+        console.log('[DEBUG H4] isAssociated result:', isAssociated);
+        // #endregion
+        
+        if (!isAssociated) {
+          // #region agent log
+          console.log('[DEBUG H4] Not associated, returning empty string (no button)');
+          // #endregion
+          return ''
+        }
+
+        // #region agent log
+        console.log('[DEBUG H4] Rendering approval button');
+        // #endregion
+        return `
+          <div class="approval-section">
+            <div class="approval-button-container">
+              <sp-button id="requestApprovalBtn" variant="accent" size="l">Request approval</sp-button>
+            </div>
+            <div id="approvalStatus" class="approval-status"></div>
+          </div>
+        `
+      }
+
+      async function requestApproval(task) {
+        const config = getConfig()
+        const params = new URLSearchParams(window.location.search)
+        const referrer = params.get('referrer') || document.referrer
+        
+        const payload = {
+          ...config,
+          referrer,
+          task: {
+            id: task.ID,
+            name: task.name,
+            projectName: task.project?.name,
+            previewUrl: task['DE:aem_workfront_integration_preview_url'],
+            publishUrl: task['DE:aem_workfront_integration_publish_url']
+          }
+        }
+
+        const approvalBtn = $('requestApprovalBtn')
+        const statusEl = $('approvalStatus')
+        
+        try {
+          approvalBtn.disabled = true
+          approvalBtn.textContent = 'Requesting...'
+          statusEl.className = 'approval-status'
+          statusEl.textContent = ''
+
+          const response = await fetch('https://hook.fusion.adobe.com/t25jws5pn0cq224nooxlmquf49t6eqrx', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+
+          if (response.ok) {
+            statusEl.className = 'approval-status success'
+            statusEl.textContent = 'Approval request sent successfully!'
+            approvalBtn.textContent = 'Request sent'
+          } else {
+            throw new Error(`Request failed with status ${response.status}`)
+          }
+        } catch (e) {
+          console.error('Failed to request approval:', e)
+          statusEl.className = 'approval-status error'
+          statusEl.textContent = `Failed to send request: ${e.message}`
+          approvalBtn.disabled = false
+          approvalBtn.textContent = 'Request approval'
+        }
+      }
+
+      // Store current task for approval request
+      let currentDetailTask = null
 
       async function showTaskDetail(taskId) {
         showPanel('loadingPanel')
         try {
           const task = await fetchTaskDetail(taskId)
+          currentDetailTask = task
           renderTaskDetail(task)
           showPanel('taskDetail')
+          
+          // Attach approval button event listener if the button exists
+          const approvalBtn = $('requestApprovalBtn')
+          if (approvalBtn) {
+            approvalBtn.addEventListener('click', () => {
+              if (currentDetailTask) {
+                requestApproval(currentDetailTask)
+              }
+            })
+          }
         } catch (e) {
           console.error('Failed to load task detail:', e)
           alert(`Failed to load task details: ${e.message}`)
