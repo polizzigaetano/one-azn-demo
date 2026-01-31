@@ -13,7 +13,7 @@
     <!-- Spectrum Web Components from JSPM CDN (selected components only) -->
     <script type="module">
       import 'https://jspm.dev/@spectrum-web-components/theme/sp-theme.js';
-      import 'https://jspm.dev/@spectrum-web-components/theme/spectrum-two/themes.js';
+      import 'https://jspm.dev/@spectrum-web-components/theme/src/spectrum-two/themes.js';
       import 'https://jspm.dev/@spectrum-web-components/button/sp-button.js';
       import 'https://jspm.dev/@spectrum-web-components/badge/sp-badge.js';
       import 'https://jspm.dev/@spectrum-web-components/divider/sp-divider.js';
@@ -978,17 +978,18 @@
             </div>
           </div>
 
-          ${renderApprovalButton(task, previewUrl)}
+          ${renderApprovalButton(task, previewUrl, publishUrl)}
         `
       }
 
-      function isTaskAssociatedWithCurrentPage(previewUrl) {
+      function isTaskAssociatedWithCurrentPage(previewUrl, publishUrl) {
+        const candidateUrls = [previewUrl, publishUrl].filter(Boolean)
         // #region agent log
-        console.log('[DEBUG H1] isTaskAssociatedWithCurrentPage entry:', { previewUrl });
+        console.log('[DEBUG H1] isTaskAssociatedWithCurrentPage entry:', { previewUrl, publishUrl, candidateCount: candidateUrls.length });
         // #endregion
-        if (!previewUrl) {
+        if (!candidateUrls.length) {
           // #region agent log
-          console.log('[DEBUG H1] previewUrl is empty, returning false');
+          console.log('[DEBUG H1] No candidate URLs, returning false');
           // #endregion
           return false
         }
@@ -1007,34 +1008,37 @@
           return false
         }
         
-        // Compare the preview URL with the referrer
-        try {
-          const previewUrlObj = new URL(previewUrl)
-          const referrerUrlObj = new URL(referrer)
-          
-          // #region agent log
-          console.log('[DEBUG H3] URL comparison:', { previewHostname: previewUrlObj.hostname, previewPathname: previewUrlObj.pathname, referrerHostname: referrerUrlObj.hostname, referrerPathname: referrerUrlObj.pathname });
-          // #endregion
-          
-          // Compare pathname and hostname (ignore protocol, query params, and hash)
-          const result = previewUrlObj.hostname === referrerUrlObj.hostname && 
-                 previewUrlObj.pathname === referrerUrlObj.pathname
-          // #region agent log
-          console.log('[DEBUG H3] URL match result:', result);
-          // #endregion
-          return result
-        } catch (e) {
-          // If URL parsing fails, do a simple string comparison
-          return previewUrl === referrer || referrer.includes(previewUrl) || previewUrl.includes(referrer)
-        }
+        const referrerUrlObj = new URL(referrer)
+
+        return candidateUrls.some((candidateUrl) => {
+          // Compare the preview/publish URL with the referrer
+          try {
+            const candidateUrlObj = new URL(candidateUrl)
+
+            // #region agent log
+            console.log('[DEBUG H3] URL comparison:', { candidateUrl, candidateHostname: candidateUrlObj.hostname, candidatePathname: candidateUrlObj.pathname, referrerHostname: referrerUrlObj.hostname, referrerPathname: referrerUrlObj.pathname });
+            // #endregion
+
+            // Compare pathname and hostname (ignore protocol, query params, and hash)
+            const result = candidateUrlObj.hostname === referrerUrlObj.hostname &&
+                 candidateUrlObj.pathname === referrerUrlObj.pathname
+            // #region agent log
+            console.log('[DEBUG H3] URL match result:', result);
+            // #endregion
+            return result
+          } catch (e) {
+            // If URL parsing fails, do a simple string comparison
+            return candidateUrl === referrer || referrer.includes(candidateUrl) || candidateUrl.includes(referrer)
+          }
+        })
       }
 
-      function renderApprovalButton(task, previewUrl) {
+      function renderApprovalButton(task, previewUrl, publishUrl) {
         // #region agent log
-        console.log('[DEBUG H4] renderApprovalButton called:', { taskId: task?.ID, taskName: task?.name, previewUrl });
+        console.log('[DEBUG H4] renderApprovalButton called:', { taskId: task?.ID, taskName: task?.name, previewUrl, publishUrl });
         // #endregion
         
-        const isAssociated = isTaskAssociatedWithCurrentPage(previewUrl)
+        const isAssociated = isTaskAssociatedWithCurrentPage(previewUrl, publishUrl)
         
         // #region agent log
         console.log('[DEBUG H4] isAssociated result:', isAssociated);
