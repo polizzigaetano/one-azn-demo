@@ -21,8 +21,24 @@
       }
     </script>
 
+    <script>
+      // #region agent log
+      fetch('http://127.0.0.1:7243/ingest/a3ecbb51-80a5-44fa-9c04-f36450814d2c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'workfront/index.html:importmap:boot',message:'Import map boot check',data:{hasImportMap:!!document.querySelector('script[type=\"importmap\"]'),url:window.location.href},timestamp:Date.now(),sessionId:'debug-session',runId:'pre-fix',hypothesisId:'H1'})}).catch(()=>{});
+      // #endregion
+    </script>
+
     <!-- Spectrum Web Components from JSPM CDN (selected components only) -->
     <script type="module">
+      // #region agent log
+      fetch('http://127.0.0.1:7243/ingest/a3ecbb51-80a5-44fa-9c04-f36450814d2c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'workfront/index.html:module:entry',message:'Spectrum modules boot',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'pre-fix',hypothesisId:'H2'})}).catch(()=>{});
+      // #endregion
+      // #region agent log
+      import('@spectrum-web-components/core/shared/base/Base.js').then(() => {
+        fetch('http://127.0.0.1:7243/ingest/a3ecbb51-80a5-44fa-9c04-f36450814d2c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'workfront/index.html:module:core-import',message:'Resolved core Base.js',data:{resolved:true},timestamp:Date.now(),sessionId:'debug-session',runId:'pre-fix',hypothesisId:'H2'})}).catch(()=>{});
+      }).catch((err) => {
+        fetch('http://127.0.0.1:7243/ingest/a3ecbb51-80a5-44fa-9c04-f36450814d2c',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'workfront/index.html:module:core-import',message:'Failed to resolve core Base.js',data:{message:err && err.message},timestamp:Date.now(),sessionId:'debug-session',runId:'pre-fix',hypothesisId:'H2'})}).catch(()=>{});
+      });
+      // #endregion
       import 'https://jspm.dev/@spectrum-web-components/theme/sp-theme.js';
       import 'https://cdn.jsdelivr.net/npm/@spectrum-web-components/theme@1.11.0/src/spectrum-two/themes.js';
       import 'https://jspm.dev/@spectrum-web-components/button/sp-button.js';
