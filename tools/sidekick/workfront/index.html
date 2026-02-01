@@ -1078,7 +1078,11 @@
           statusEl.className = 'approval-status'
           statusEl.textContent = ''
 
-          const response = await fetch('https://hook.fusion.adobe.com/t25jws5pn0cq224nooxlmquf49t6eqrx', {
+          const webhookUrl = 'https://hook.fusion.adobe.com/t25jws5pn0cq224nooxlmquf49t6eqrx'
+          const proxyUrl = new URL('https://cors.cpilsworth.workers.dev/')
+          proxyUrl.searchParams.set('target', webhookUrl)
+
+          const response = await fetch(proxyUrl.toString(), {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
