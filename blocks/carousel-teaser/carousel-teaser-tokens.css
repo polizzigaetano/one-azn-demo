@@ -1,0 +1,104 @@
+/* blocks/carousel-teaser/carousel-teaser-tokens.css */
+
+/* All values extracted from carousel-teaser-measurements.txt */
+
+/* Source: Figma node 2214:33370 - One AZ 3.1 Market Master */
+
+.carousel-teaser {
+  /* ===== LAYOUT & DIMENSIONS ===== */
+  --carousel-teaser-max-width: 1180px;
+  --carousel-teaser-padding: 40px;
+  --carousel-teaser-gap: 8px;
+  --carousel-teaser-content-gap: 16px;
+  --carousel-teaser-arrow-gap: 24px;
+  --carousel-teaser-content-width: 575px;
+  --carousel-teaser-content-image-gap: 30px;
+
+  /* ===== CONTAINER COLORS ===== */
+  --carousel-teaser-background: #fff;
+
+  /* ===== TYPOGRAPHY - TITLE ===== */
+  --carousel-teaser-title-font-family: 'Lexia', serif;
+  --carousel-teaser-title-font-size: 26px;
+  --carousel-teaser-title-font-weight: 400;
+  --carousel-teaser-title-font-style: normal;
+  --carousel-teaser-title-line-height: 34px;
+  --carousel-teaser-title-letter-spacing: 0;
+  --carousel-teaser-title-text-transform: none;
+  --carousel-teaser-title-color: #4f0031;
+  --carousel-teaser-title-text-align: left;
+
+  /* ===== TYPOGRAPHY - BODY ===== */
+  --carousel-teaser-body-font-family: 'Inter', sans-serif;
+  --carousel-teaser-body-font-size: 18px;
+  --carousel-teaser-body-font-weight: 400;
+  --carousel-teaser-body-font-style: normal;
+  --carousel-teaser-body-line-height: 28px;
+  --carousel-teaser-body-letter-spacing: 0;
+  --carousel-teaser-body-color: #363b3b;
+  --carousel-teaser-body-text-align: left;
+
+  /* ===== TYPOGRAPHY - BUTTON ===== */
+  --carousel-teaser-button-font-family: 'Inter', sans-serif;
+  --carousel-teaser-button-font-size: 16px;
+  --carousel-teaser-button-font-weight: 600;
+  --carousel-teaser-button-font-style: normal;
+  --carousel-teaser-button-line-height: 24px;
+  --carousel-teaser-button-letter-spacing: 0;
+  --carousel-teaser-button-text-transform: none;
+  --carousel-teaser-button-color: #fff;
+  --carousel-teaser-button-background: #d0006f;
+  --carousel-teaser-button-border-color: #d0006f;
+  --carousel-teaser-button-border-width: 1px;
+  --carousel-teaser-button-border-style: solid;
+  --carousel-teaser-button-border-radius: 4px;
+  --carousel-teaser-button-padding-x: 16px;
+  --carousel-teaser-button-padding-y: 8px;
+  --carousel-teaser-button-min-height: 42px;
+
+  /* ===== BUTTON HOVER STATES ===== */
+  --carousel-teaser-button-hover-background: #a80058;
+  --carousel-teaser-button-hover-border-color: #a80058;
+
+  /* ===== NAVIGATION ARROWS ===== */
+  --carousel-teaser-arrow-color: #d0006f;
+  --carousel-teaser-arrow-border-width: 2px;
+  --carousel-teaser-arrow-border-style: solid;
+  --carousel-teaser-arrow-size: 48px;
+  --carousel-teaser-arrow-background: transparent;
+  --carousel-teaser-arrow-hover-background: #d0006f;
+  --carousel-teaser-arrow-hover-color: #fff;
+
+  /* ===== PAGINATION DOTS ===== */
+  --carousel-teaser-dot-size: 8px;
+  --carousel-teaser-dot-gap: 16px;
+  --carousel-teaser-dot-active-color: #d0006f;
+  --carousel-teaser-dot-inactive-color: #363b3b;
+  --carousel-teaser-dot-container-width: 24px;
+  --carousel-teaser-dot-container-height: 40px;
+
+  /* ===== BRAND SLOT ===== */
+  --carousel-teaser-brand-padding-top: 20px;
+  --carousel-teaser-brand-padding-bottom: 16px;
+  --carousel-teaser-brand-width: 270px;
+
+  /* ===== BORDERS & RADIUS ===== */
+  --carousel-teaser-border-width: 0;
+  --carousel-teaser-border-style: none;
+  --carousel-teaser-border-color: transparent;
+  --carousel-teaser-border-radius: 0;
+
+  /* ===== SHADOWS ===== */
+  --carousel-teaser-shadow-x: 0;
+  --carousel-teaser-shadow-y: 0;
+  --carousel-teaser-shadow-blur: 0;
+  --carousel-teaser-shadow-spread: 0;
+  --carousel-teaser-shadow-color: transparent;
+
+  /* ===== TRANSITIONS ===== */
+  --carousel-teaser-transition-duration: 300ms;
+  --carousel-teaser-transition-timing: ease;
+
+  /* ===== PRIMARY BRAND COLOR ===== */
+  --carousel-teaser-primary-color: #d0006f;
+}

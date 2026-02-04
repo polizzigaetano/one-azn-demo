@@ -1,0 +1,40 @@
+{
+  "variantName": "carousel-teaser",
+  "baseBlock": "carousel",
+  "description": "Carousel block with teaser content - side-by-side layout with title, description, CTA button, and image. Features navigation arrows and pagination dots.",
+  "figmaSource": {
+    "fileKey": "kQplMQTStmD7cRMJiG4T6c",
+    "nodeId": "2214:33370",
+    "fileName": "One AZ 3.1 – Market Master"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "promotional",
+    "imagePattern": "side-by-side",
+    "hasNavigation": true,
+    "hasPagination": true
+  },
+  "contentPattern": {
+    "structure": "teaser",
+    "hasTitle": true,
+    "hasDescription": true,
+    "hasButton": true,
+    "hasImage": true,
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "designTokens": {
+    "primaryColor": "#d0006f",
+    "titleColor": "#4f0031",
+    "bodyColor": "#363b3b",
+    "backgroundColor": "#ffffff",
+    "titleFont": "Lexia",
+    "bodyFont": "Inter"
+  },
+  "usage": {
+    "pagesUsing": ["/content/carousel-teaser-demo.md"],
+    "createdAt": "2026-02-02",
+    "source": "figma-migration"
+  }
+}

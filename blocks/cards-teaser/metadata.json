@@ -1,0 +1,46 @@
+{
+  "variantName": "cards-teaser",
+  "baseBlock": "cards",
+  "description": "Teaser cards with image on top, title, description, and CTA button. 4-column grid layout on desktop.",
+  "source": {
+    "type": "figma",
+    "fileKey": "kQplMQTStmD7cRMJiG4T6c",
+    "nodeId": "2216:36054",
+    "fileName": "One-AZ-3.1 Market Master",
+    "componentName": "Columns : Image Top | Text Bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "teaser",
+    "imagePattern": "top",
+    "primaryColor": "#d0006f",
+    "secondaryColor": "#4f0031",
+    "backgroundColor": "#ebefee"
+  },
+  "contentPattern": {
+    "structure": "image-title-description-cta",
+    "hasImage": true,
+    "hasTitle": true,
+    "hasDescription": true,
+    "hasCta": true,
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "layout": {
+    "columns": 4,
+    "gap": "10px",
+    "maxWidth": "1180px",
+    "responsive": true
+  },
+  "typography": {
+    "titleFont": "Lexia",
+    "bodyFont": "Inter",
+    "titleSize": "26px",
+    "bodySize": "18px"
+  },
+  "usage": {
+    "createdAt": "2026-02-02T12:34:00.000Z",
+    "pagesUsing": ["/content/cards-teaser-demo.md"]
+  }
+}

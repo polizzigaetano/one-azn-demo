@@ -1,0 +1,334 @@
+/* ===== CAROUSEL-TEASER COMPONENT TOKENS ===== */
+
+/* Extracted from Figma node 2214:33370 - One AZ 3.1 Market Master */
+
+/* All values from carousel-teaser-measurements.txt */
+
+.carousel-teaser {
+  /* --- Layout & Dimensions --- */
+  --carousel-teaser-max-width: 1180px;
+  --carousel-teaser-padding: 40px;
+  --carousel-teaser-gap: 8px;
+  --carousel-teaser-content-gap: 16px;
+  --carousel-teaser-arrow-gap: 24px;
+  --carousel-teaser-content-width: 575px;
+  --carousel-teaser-content-image-gap: 30px;
+
+  /* --- Container Colors --- */
+  --carousel-teaser-background: #fff;
+
+  /* --- Typography - Title --- */
+  --carousel-teaser-title-font-family: 'Lexia', serif;
+  --carousel-teaser-title-font-size: 26px;
+  --carousel-teaser-title-font-weight: 400;
+  --carousel-teaser-title-font-style: normal;
+  --carousel-teaser-title-line-height: 34px;
+  --carousel-teaser-title-letter-spacing: 0;
+  --carousel-teaser-title-text-transform: none;
+  --carousel-teaser-title-color: #4f0031;
+
+  /* --- Typography - Body --- */
+  --carousel-teaser-body-font-family: 'Inter', sans-serif;
+  --carousel-teaser-body-font-size: 18px;
+  --carousel-teaser-body-font-weight: 400;
+  --carousel-teaser-body-font-style: normal;
+  --carousel-teaser-body-line-height: 28px;
+  --carousel-teaser-body-letter-spacing: 0;
+  --carousel-teaser-body-color: #363b3b;
+
+  /* --- Typography - Button --- */
+  --carousel-teaser-button-font-family: 'Inter', sans-serif;
+  --carousel-teaser-button-font-size: 16px;
+  --carousel-teaser-button-font-weight: 600;
+  --carousel-teaser-button-font-style: normal;
+  --carousel-teaser-button-line-height: 24px;
+  --carousel-teaser-button-color: #fff;
+  --carousel-teaser-button-background: #d0006f;
+  --carousel-teaser-button-border-color: #d0006f;
+  --carousel-teaser-button-border-width: 1px;
+  --carousel-teaser-button-border-radius: 4px;
+  --carousel-teaser-button-padding-x: 16px;
+  --carousel-teaser-button-padding-y: 8px;
+  --carousel-teaser-button-min-height: 42px;
+
+  /* --- Button Hover --- */
+  --carousel-teaser-button-hover-background: #a80058;
+  --carousel-teaser-button-hover-border-color: #a80058;
+
+  /* --- Navigation Arrows --- */
+  --carousel-teaser-arrow-color: #d0006f;
+  --carousel-teaser-arrow-border-width: 2px;
+  --carousel-teaser-arrow-size: 48px;
+  --carousel-teaser-arrow-background: transparent;
+  --carousel-teaser-arrow-hover-background: #d0006f;
+  --carousel-teaser-arrow-hover-color: #fff;
+
+  /* --- Pagination Dots --- */
+  --carousel-teaser-dot-size: 8px;
+  --carousel-teaser-dot-gap: 16px;
+  --carousel-teaser-dot-active-color: #d0006f;
+  --carousel-teaser-dot-inactive-color: #363b3b;
+
+  /* --- Transitions --- */
+  --carousel-teaser-transition-duration: 300ms;
+  --carousel-teaser-transition-timing: ease;
+
+  /* --- Primary Brand Color --- */
+  --carousel-teaser-primary-color: #d0006f;
+
+  /* ===== MAIN CONTAINER STYLES ===== */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--carousel-teaser-padding);
+  background: var(--carousel-teaser-background);
+  overflow: hidden;
+}
+
+.carousel-teaser .carousel-slides-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--carousel-teaser-max-width);
+}
+
+/* ===== SLIDES ===== */
+.carousel-teaser .carousel-slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-teaser .carousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-teaser .carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--carousel-teaser-content-image-gap);
+  width: 100%;
+  min-height: 320px;
+}
+
+/* ===== SLIDE CONTENT ===== */
+.carousel-teaser .carousel-slide-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carousel-teaser-content-gap);
+  flex: 1;
+  max-width: var(--carousel-teaser-content-width);
+  padding: 0;
+}
+
+.carousel-teaser .carousel-slide-content h1,
+.carousel-teaser .carousel-slide-content h2,
+.carousel-teaser .carousel-slide-content h3,
+.carousel-teaser .carousel-slide-content h4 {
+  font-family: var(--carousel-teaser-title-font-family);
+  font-size: var(--carousel-teaser-title-font-size);
+  font-weight: var(--carousel-teaser-title-font-weight);
+  font-style: var(--carousel-teaser-title-font-style);
+  line-height: var(--carousel-teaser-title-line-height);
+  letter-spacing: var(--carousel-teaser-title-letter-spacing);
+  text-transform: var(--carousel-teaser-title-text-transform);
+  color: var(--carousel-teaser-title-color);
+  margin: 0;
+}
+
+.carousel-teaser .carousel-slide-content p {
+  font-family: var(--carousel-teaser-body-font-family);
+  font-size: var(--carousel-teaser-body-font-size);
+  font-weight: var(--carousel-teaser-body-font-weight);
+  font-style: var(--carousel-teaser-body-font-style);
+  line-height: var(--carousel-teaser-body-line-height);
+  letter-spacing: var(--carousel-teaser-body-letter-spacing);
+  color: var(--carousel-teaser-body-color);
+  margin: 0;
+}
+
+/* ===== BUTTONS / CTA ===== */
+.carousel-teaser .carousel-slide-content .button-container {
+  margin-top: var(--carousel-teaser-gap);
+}
+
+.carousel-teaser .carousel-slide-content a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--carousel-teaser-button-font-family);
+  font-size: var(--carousel-teaser-button-font-size);
+  font-weight: var(--carousel-teaser-button-font-weight);
+  font-style: var(--carousel-teaser-button-font-style);
+  line-height: var(--carousel-teaser-button-line-height);
+  color: var(--carousel-teaser-button-color);
+  background: var(--carousel-teaser-button-background);
+  border: var(--carousel-teaser-button-border-width) solid var(--carousel-teaser-button-border-color);
+  border-radius: var(--carousel-teaser-button-border-radius);
+  padding: var(--carousel-teaser-button-padding-y) var(--carousel-teaser-button-padding-x);
+  min-height: var(--carousel-teaser-button-min-height);
+  text-decoration: none;
+  transition: background-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing),
+              border-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing);
+  cursor: pointer;
+}
+
+.carousel-teaser .carousel-slide-content a.button:hover,
+.carousel-teaser .carousel-slide-content a.button:focus-visible {
+  background: var(--carousel-teaser-button-hover-background);
+  border-color: var(--carousel-teaser-button-hover-border-color);
+}
+
+/* ===== SLIDE IMAGE ===== */
+.carousel-teaser .carousel-slide-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-teaser .carousel-slide-image picture {
+  display: block;
+  width: 100%;
+}
+
+.carousel-teaser .carousel-slide-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+.carousel-teaser .carousel-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -60px;
+  right: -60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-teaser .carousel-navigation-buttons button {
+  pointer-events: auto;
+  position: relative;
+  width: var(--carousel-teaser-arrow-size);
+  height: var(--carousel-teaser-arrow-size);
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: var(--carousel-teaser-arrow-border-width) solid var(--carousel-teaser-arrow-color);
+  background-color: var(--carousel-teaser-arrow-background);
+  cursor: pointer;
+  transition: background-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing),
+              border-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing);
+}
+
+.carousel-teaser .carousel-navigation-buttons button:hover,
+.carousel-teaser .carousel-navigation-buttons button:focus-visible {
+  background-color: var(--carousel-teaser-arrow-hover-background);
+  border-color: var(--carousel-teaser-arrow-hover-background);
+}
+
+.carousel-teaser .carousel-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid var(--carousel-teaser-arrow-color);
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 3px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+  transition: border-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing);
+}
+
+.carousel-teaser .carousel-navigation-buttons button:hover::after,
+.carousel-teaser .carousel-navigation-buttons button:focus-visible::after {
+  border-color: var(--carousel-teaser-arrow-hover-color);
+}
+
+.carousel-teaser .carousel-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 3px);
+}
+
+/* ===== PAGINATION DOTS ===== */
+.carousel-teaser .carousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--carousel-teaser-dot-gap);
+  padding-top: var(--carousel-teaser-content-gap);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-teaser .carousel-slide-indicator button {
+  width: var(--carousel-teaser-dot-size);
+  height: var(--carousel-teaser-dot-size);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--carousel-teaser-dot-inactive-color);
+  cursor: pointer;
+  transition: background-color var(--carousel-teaser-transition-duration) var(--carousel-teaser-transition-timing);
+}
+
+.carousel-teaser .carousel-slide-indicator button:disabled {
+  background-color: var(--carousel-teaser-dot-active-color);
+  cursor: default;
+}
+
+.carousel-teaser .carousel-slide-indicator button:not(:disabled):hover,
+.carousel-teaser .carousel-slide-indicator button:not(:disabled):focus-visible {
+  background-color: var(--carousel-teaser-primary-color);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (width <= 900px) {
+  .carousel-teaser .carousel-slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carousel-teaser .carousel-slide-content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .carousel-teaser .carousel-navigation-buttons {
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (width <= 600px) {
+  .carousel-teaser {
+    padding: 24px 16px;
+  }
+
+  .carousel-teaser .carousel-navigation-buttons button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-teaser .carousel-navigation-buttons button::after {
+    height: 10px;
+    width: 10px;
+  }
+}

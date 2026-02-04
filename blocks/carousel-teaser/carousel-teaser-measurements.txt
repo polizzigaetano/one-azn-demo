@@ -1,0 +1,117 @@
+VISUAL MEASUREMENT CHECKLIST FOR carousel-teaser
+================================================
+Extracted from Figma node: 2214:33370
+Date: 2026-02-02
+
+LAYOUT & DIMENSIONS
+☑ Container width: 1440px (source: metadata width="1440")
+☑ Container height: 459px (source: metadata height="459.4468994140625")
+☑ Container padding: top 40px right 40px bottom 40px left 40px (source: design_context p-[40px])
+☑ Max-width: 1180px (source: get_variable_defs site-max-width: "1180")
+☑ Grid/Flex gap: 8px (source: design_context gap-[8px])
+☑ Content gap: 16px (source: design_context gap-[16px] on Carousel Slot)
+☑ Arrow gap: 24px (source: design_context gap-[24px] on Carousel Body)
+☑ Content area width: 575px (source: design_context w-[575px] on cmp-teaser__pretitle)
+☑ Content text gap: 8px (source: design_context gap-[8px] on cmp-teaser__title)
+
+TEASER LAYOUT
+☑ Content-image gap: 30px (source: design_context gap-[30px] on Teaser: Text and Image)
+☑ Teaser max-width: 1180px (source: design_context max-w-[1180px])
+☑ Image section: right side of content (source: visual layout)
+
+COLORS (EXACT HEX + OPACITY)
+☑ Background color: #ffffff (opacity: 100%) (source: get_variable_defs Background/White)
+☑ Title text color: #4f0031 (source: design_context text-[color:var(--Text-Title-2,#4f0031)])
+☑ Body text color: #363b3b (source: design_context text-[color:var(--Text-Body-1,#363b3b)])
+☑ Primary brand color: #d0006f (source: get_variable_defs Color/D0006F)
+☑ Button background: #d0006f (source: design_context bg-[#d0006f])
+☑ Button text color: #ffffff (source: design_context text-[#ffffff])
+☑ Button border color: #d0006f (source: design_context border-[#d0006f])
+☑ Arrow/icon color: #d0006f (source: visual inspection of arrows)
+☑ Pagination active dot: #d0006f (source: visual inspection)
+☑ Pagination inactive dot: #363b3b (source: design_context bg-[var(--Text-Body-1,#363b3b)])
+☑ Gray overlay: #2e3232cc (source: design_context bg-[#2e3232cc], 80% opacity)
+
+TYPOGRAPHY - HEADING (TITLE)
+☑ Heading font-family: Lexia (source: design_context font-['Lexia',sans-serif])
+☑ Heading font-size: 26px (source: design_context text-[26px], get_variable_defs Headings/Lexia-26)
+☑ Heading font-weight: 400 (source: design_context font-normal, get_variable_defs Headings/Lexia-26)
+☑ Heading line-height: 34px (source: design_context leading-[34px])
+☑ Heading letter-spacing: 0 (source: no letter-spacing in design_context)
+☑ Heading text-transform: none (source: no text-transform in design_context)
+☑ Heading font-style: normal (source: design_context font-normal)
+☑ Heading text-align: left (source: design_context text-left)
+
+TYPOGRAPHY - BODY
+☑ Body font-family: Inter (source: design_context font-['Inter',sans-serif])
+☑ Body font-size: 18px (source: design_context text-[18px], get_variable_defs Body/Inter-18)
+☑ Body font-weight: 400 (source: design_context font-normal)
+☑ Body line-height: 28px (source: design_context leading-[28px])
+☑ Body letter-spacing: 0 (source: no letter-spacing in design_context)
+☑ Body font-style: normal (source: design_context font-normal)
+☑ Body text-align: left (source: design_context text-left)
+
+TYPOGRAPHY - BUTTON
+☑ Button font-family: Inter (source: design_context font-['Inter',sans-serif])
+☑ Button font-size: 16px (source: design_context text-[16px], get_variable_defs Body/Inter-16)
+☑ Button font-weight: 600 (source: design_context font-semibold)
+☑ Button line-height: 24px (source: design_context leading-[24px])
+☑ Button letter-spacing: 0 (source: no letter-spacing in design_context)
+☑ Button font-style: normal (source: no font-style specified)
+☑ Button text-transform: none (source: no text-transform in design_context)
+☑ Button text-align: left (source: design_context text-left)
+
+BUTTON STYLING
+☑ Button padding-x: 16px (source: design_context px-[16px])
+☑ Button padding-y: 8px (source: design_context py-[8px])
+☑ Button min-height: 42px (source: design_context min-h-[42px])
+☑ Button border-width: 1px (source: design_context border-[1px])
+☑ Button border-style: solid (source: design_context border-solid)
+☑ Button border-color: #d0006f (source: design_context border-[#d0006f])
+☑ Button border-radius: 4px (source: design_context rounded-[4px])
+
+NAVIGATION ARROWS
+☑ Arrow container width: 1340px (source: design_context w-[1340px])
+☑ Arrow style: circle outline with arrow icon (source: visual inspection)
+☑ Arrow border: 2px solid #d0006f (source: visual inspection)
+☑ Arrow size: approximately 48px (source: visual estimation)
+☑ Arrow position: vertically centered, horizontal edges (source: design_context top-1/2 -translate-y-1/2)
+
+PAGINATION DOTS
+☑ Dot size: 8px (source: design_context w-[8px] h-[8px])
+☑ Dot container width: 24px (source: design_context w-[24px])
+☑ Dot container height: 40px (source: design_context h-[40px])
+☑ Dot shape: circle (source: design_context rounded-full)
+☑ Dot count: 5 (source: visual inspection)
+☑ Active dot color: #d0006f (source: visual - filled magenta)
+☑ Inactive dot color: #363b3b (source: design_context bg-[var(--Text-Body-1,#363b3b)])
+
+BORDERS & RADIUS
+☑ Container border-width: 0px (source: no border classes in design_context)
+☑ Container border-style: none (source: no border styling)
+☑ Container border-color: N/A (source: no border present)
+☑ Container border-radius: 0px (source: no rounded classes on container)
+☑ Content border-radius: 0px (source: no rounded classes on content)
+
+SHADOWS
+☑ Box-shadow offset-x: 0px (source: no shadow in design_context)
+☑ Box-shadow offset-y: 0px (source: no shadow in design_context)
+☑ Box-shadow blur: 0px (source: no shadow in design_context)
+☑ Box-shadow spread: 0px (source: no shadow in design_context)
+☑ Box-shadow color: N/A (source: no shadow present)
+
+EFFECTS & TRANSITIONS
+☑ Hover transform: none specified (source: no hover state in static Figma)
+☑ Transition duration: 300ms (source: typical carousel transition)
+☑ Transition timing: ease (source: typical carousel timing)
+☑ Opacity changes: none (source: no opacity transitions specified)
+
+IMAGES
+☑ Teaser image: right side, fluid width (source: visual layout)
+☑ Image container: overflow-hidden (source: design_context overflow-hidden)
+☑ Brand logo area: 270px width (source: design_context w-[270px])
+
+BRAND SLOT / PRETITLE
+☑ Brand slot padding-top: 20px (source: design_context pt-[20px])
+☑ Brand slot padding-bottom: 16px (source: design_context pb-[16px])
+☑ Brand slot width: 270px (source: design_context w-[270px])
