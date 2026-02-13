@@ -1,0 +1,39 @@
+{
+  "name": "stats-trust",
+  "baseBlock": "stats",
+  "description": "Trust statistics block with header section (eyebrow, heading, CTA) and 2x2 grid of stat cards. First card has magenta highlight background.",
+  "source": {
+    "type": "figma",
+    "figmaFileKey": "4IPXV9vtaD7fbqzeT4L2hT",
+    "figmaNodeId": "73:1995",
+    "figmaFileName": "SWBC-Home-Page-Redesign",
+    "migratedAt": "2026-02-13T10:10:00.000Z"
+  },
+  "characteristics": {
+    "purpose": "trust-showcase",
+    "colorScheme": "light-accent",
+    "density": "spacious",
+    "imagePattern": "noimg",
+    "contentPattern": {
+      "structure": "header-grid",
+      "hasEyebrow": true,
+      "hasHeading": true,
+      "hasCTA": true,
+      "cardCount": 4,
+      "highlightedCards": 1
+    }
+  },
+  "designTokens": {
+    "primaryColor": "#008eaa",
+    "secondaryColor": "#3c3c40",
+    "accentColor": "#9e007e",
+    "backgroundColor": "#f9fafb",
+    "fontFamily": "Proxima Nova"
+  },
+  "usage": {
+    "pagesUsing": ["trust"],
+    "reuseCount": 1,
+    "createdAt": "2026-02-13T10:10:00.000Z",
+    "lastUsedAt": "2026-02-13T10:10:00.000Z"
+  }
+}

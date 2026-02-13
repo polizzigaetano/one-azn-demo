@@ -1,0 +1,66 @@
+/* blocks/accordion-solutions/accordion-solutions-tokens.css */
+/* ALL values extracted from accordion-solutions-measurements.txt */
+
+.accordion-solutions {
+  /* ===== LAYOUT & DIMENSIONS ===== */
+  --accordion-solutions-max-width: 1412px;
+  --accordion-solutions-container-padding: 0;
+  --accordion-solutions-columns-gap: 60px;
+  --accordion-solutions-accordion-width: 489px;
+  --accordion-solutions-images-width: 860px;
+
+  /* ===== SPACING ===== */
+  --accordion-solutions-item-spacing: 40px;
+  --accordion-solutions-heading-gap: 16px;
+  --accordion-solutions-image-gap: 20px;
+  --accordion-solutions-header-content-gap: 60px;
+
+  /* ===== COLORS ===== */
+  --accordion-solutions-background: #ffffff;
+  --accordion-solutions-eyebrow-color: #008eaa;
+  --accordion-solutions-heading-color: #3c3c40;
+  --accordion-solutions-title-color: #3c3c40;
+  --accordion-solutions-body-color: #3c3c40;
+  --accordion-solutions-active-indicator: #00c1d5;
+  --accordion-solutions-divider-color: #d9d9d9;
+  --accordion-solutions-chevron-color: #000000;
+
+  /* ===== TYPOGRAPHY - EYEBROW ===== */
+  --accordion-solutions-eyebrow-font-family: "Proxima Nova", sans-serif;
+  --accordion-solutions-eyebrow-font-size: 25px;
+  --accordion-solutions-eyebrow-font-weight: 400;
+  --accordion-solutions-eyebrow-line-height: 30px;
+  --accordion-solutions-eyebrow-text-transform: none;
+
+  /* ===== TYPOGRAPHY - MAIN HEADING ===== */
+  --accordion-solutions-main-heading-font-family: "Proxima Nova", sans-serif;
+  --accordion-solutions-main-heading-font-size: 36px;
+  --accordion-solutions-main-heading-font-weight: 500;
+  --accordion-solutions-main-heading-line-height: 44px;
+
+  /* ===== TYPOGRAPHY - ACCORDION TITLE ===== */
+  --accordion-solutions-title-font-family: "Proxima Nova", sans-serif;
+  --accordion-solutions-title-font-size: 25px;
+  --accordion-solutions-title-font-weight: 400;
+  --accordion-solutions-title-line-height: 30px;
+
+  /* ===== TYPOGRAPHY - BODY ===== */
+  --accordion-solutions-body-font-family: "Proxima Nova", sans-serif;
+  --accordion-solutions-body-font-size: 18px;
+  --accordion-solutions-body-font-weight: 400;
+  --accordion-solutions-body-line-height: 22px;
+  --accordion-solutions-body-font-style: normal;
+
+  /* ===== BORDERS & RADIUS ===== */
+  --accordion-solutions-active-indicator-width: 4px;
+  --accordion-solutions-divider-width: 2px;
+  --accordion-solutions-image-border-radius: 15px;
+  --accordion-solutions-container-border-radius: 0;
+
+  /* ===== SHADOWS ===== */
+  --accordion-solutions-shadow: none;
+
+  /* ===== TRANSITIONS ===== */
+  --accordion-solutions-transition-duration: 300ms;
+  --accordion-solutions-transition-timing: ease-in-out;
+}

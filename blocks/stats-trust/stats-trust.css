@@ -1,0 +1,149 @@
+/* Import component-specific tokens */
+@import './stats-trust-tokens.css';
+
+/* Stats Trust Block */
+.stats-trust {
+  background: var(--stats-trust-section-background);
+  padding: var(--stats-trust-section-padding);
+  max-width: var(--stats-trust-max-width);
+  margin: 0 auto;
+}
+
+/* Two-column layout: header left, stats right */
+.stats-trust-wrapper {
+  display: grid;
+  grid-template-columns: minmax(400px, 537px) minmax(600px, 876px);
+  gap: var(--stats-trust-columns-gap);
+  align-items: start;
+  justify-content: space-between;
+}
+
+/* Header Section */
+.stats-trust-header {
+  max-width: 537px;
+}
+
+.stats-trust-eyebrow {
+  font-family: var(--stats-trust-eyebrow-font-family);
+  font-size: var(--stats-trust-eyebrow-font-size);
+  font-weight: var(--stats-trust-eyebrow-font-weight);
+  line-height: var(--stats-trust-eyebrow-line-height);
+  color: var(--stats-trust-eyebrow-color);
+  margin-bottom: var(--stats-trust-eyebrow-margin-bottom);
+}
+
+.stats-trust-heading {
+  font-family: var(--stats-trust-heading-font-family);
+  font-size: var(--stats-trust-heading-font-size);
+  font-weight: var(--stats-trust-heading-font-weight);
+  line-height: var(--stats-trust-heading-line-height);
+  color: var(--stats-trust-heading-color);
+  margin-bottom: var(--stats-trust-heading-margin-bottom);
+}
+
+.stats-trust-cta {
+  display: inline-block;
+  font-family: var(--stats-trust-button-font-family);
+  font-size: var(--stats-trust-button-font-size);
+  font-weight: var(--stats-trust-button-font-weight);
+  line-height: var(--stats-trust-button-line-height);
+  color: var(--stats-trust-button-color);
+  background: var(--stats-trust-button-background);
+  border: var(--stats-trust-button-border);
+  border-radius: var(--stats-trust-button-border-radius);
+  padding: var(--stats-trust-button-padding);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.stats-trust-cta:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Stats Grid */
+.stats-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--stats-trust-grid-gap);
+}
+
+/* Stat Card */
+.stats-trust-card {
+  background: var(--stats-trust-card-background);
+  border-radius: var(--stats-trust-card-border-radius);
+  padding: var(--stats-trust-card-padding);
+  box-shadow: var(--stats-trust-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--stats-trust-card-gap);
+}
+
+/* Highlighted Card (first card) */
+.stats-trust-card.highlight {
+  background: var(--stats-trust-card-highlight-background);
+  box-shadow: none;
+}
+
+.stats-trust-card.highlight .stats-trust-number,
+.stats-trust-card.highlight .stats-trust-stat-heading,
+.stats-trust-card.highlight .stats-trust-stat-body {
+  color: var(--stats-trust-card-highlight-text);
+}
+
+/* Stat Number */
+.stats-trust-number {
+  font-family: var(--stats-trust-number-font-family);
+  font-size: var(--stats-trust-number-font-size);
+  font-weight: var(--stats-trust-number-font-weight);
+  line-height: var(--stats-trust-number-line-height);
+  color: var(--stats-trust-number-color);
+  margin: 0;
+}
+
+/* Stat Content */
+.stats-trust-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stats-trust-content-gap);
+}
+
+.stats-trust-stat-heading {
+  font-family: var(--stats-trust-stat-heading-font-family);
+  font-size: var(--stats-trust-stat-heading-font-size);
+  font-weight: var(--stats-trust-stat-heading-font-weight);
+  line-height: var(--stats-trust-stat-heading-line-height);
+  color: var(--stats-trust-stat-heading-color);
+  margin: 0;
+}
+
+.stats-trust-stat-body {
+  font-family: var(--stats-trust-stat-body-font-family);
+  font-size: var(--stats-trust-stat-body-font-size);
+  font-weight: var(--stats-trust-stat-body-font-weight);
+  line-height: var(--stats-trust-stat-body-line-height);
+  color: var(--stats-trust-stat-body-color);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .stats-trust-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-trust-grid {
+    max-width: 100%;
+  }
+
+  .stats-trust-header {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}

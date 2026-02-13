@@ -1,0 +1,37 @@
+{
+  "name": "accordion-solutions",
+  "baseBlock": "accordion",
+  "description": "Business solutions accordion with header section and image grid. Features eyebrow text, main heading, expandable accordion items with active indicator, and accompanying image gallery.",
+  "source": {
+    "type": "figma",
+    "figmaFileKey": "4IPXV9vtaD7fbqzeT4L2hT",
+    "figmaNodeId": "73:1975",
+    "figmaFileName": "SWBC-Home-Page-Redesign",
+    "migratedAt": "2026-02-13T10:02:00.000Z"
+  },
+  "characteristics": {
+    "purpose": "solutions-showcase",
+    "colorScheme": "light",
+    "density": "spacious",
+    "imagePattern": "gallery",
+    "contentPattern": {
+      "structure": "header-accordion-images",
+      "hasEyebrow": true,
+      "hasHeading": true,
+      "accordionItems": 4,
+      "imageCount": 3
+    }
+  },
+  "designTokens": {
+    "primaryColor": "#008eaa",
+    "secondaryColor": "#3c3c40",
+    "accentColor": "#00c1d5",
+    "fontFamily": "Proxima Nova"
+  },
+  "usage": {
+    "pagesUsing": ["solutions"],
+    "reuseCount": 1,
+    "createdAt": "2026-02-13T10:02:00.000Z",
+    "lastUsedAt": "2026-02-13T10:04:00.000Z"
+  }
+}

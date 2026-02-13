@@ -1,0 +1,79 @@
+/* blocks/stats-trust/stats-trust-tokens.css */
+/* Design tokens extracted from Figma node: 73:1995 */
+
+.stats-trust {
+  /* ===== SECTION LAYOUT ===== */
+  --stats-trust-section-background: #f9fafb;
+  --stats-trust-section-padding: 80px 50px;
+  --stats-trust-max-width: 1598px;
+  --stats-trust-columns-gap: 60px;
+
+  /* ===== HEADER SECTION ===== */
+  --stats-trust-header-max-width: 500px;
+
+  /* ===== EYEBROW ===== */
+  --stats-trust-eyebrow-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-eyebrow-font-size: 25px;
+  --stats-trust-eyebrow-font-weight: 400;
+  --stats-trust-eyebrow-line-height: 30px;
+  --stats-trust-eyebrow-color: #008eaa;
+  --stats-trust-eyebrow-margin-bottom: 16px;
+
+  /* ===== MAIN HEADING ===== */
+  --stats-trust-heading-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-heading-font-size: 36px;
+  --stats-trust-heading-font-weight: 500;
+  --stats-trust-heading-line-height: 44px;
+  --stats-trust-heading-color: #3c3c40;
+  --stats-trust-heading-margin-bottom: 32px;
+
+  /* ===== CTA BUTTON ===== */
+  --stats-trust-button-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-button-font-size: 18px;
+  --stats-trust-button-font-weight: 600;
+  --stats-trust-button-line-height: 22px;
+  --stats-trust-button-color: #000000;
+  --stats-trust-button-background: transparent;
+  --stats-trust-button-border: 1px solid #000000;
+  --stats-trust-button-border-radius: 1000px;
+  --stats-trust-button-padding: 10px 62px;
+
+  /* ===== STATS GRID ===== */
+  --stats-trust-grid-gap: 20px;
+  --stats-trust-grid-width: 876px;
+
+  /* ===== STAT CARD ===== */
+  --stats-trust-card-background: #ffffff;
+  --stats-trust-card-border-radius: 15px;
+  --stats-trust-card-padding: 32px;
+  --stats-trust-card-shadow: 0px 1px 4px 0px rgba(12,12,13,0.05), 0px 1px 4px 0px rgba(12,12,13,0.10);
+  --stats-trust-card-gap: 48px;
+
+  /* ===== HIGHLIGHTED CARD ===== */
+  --stats-trust-card-highlight-background: #9e007e;
+  --stats-trust-card-highlight-text: #ffffff;
+
+  /* ===== STAT NUMBER ===== */
+  --stats-trust-number-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-number-font-size: 56px;
+  --stats-trust-number-font-weight: 600;
+  --stats-trust-number-line-height: 68px;
+  --stats-trust-number-color: #3c3c40;
+
+  /* ===== STAT HEADING ===== */
+  --stats-trust-stat-heading-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-stat-heading-font-size: 20px;
+  --stats-trust-stat-heading-font-weight: 600;
+  --stats-trust-stat-heading-line-height: 24px;
+  --stats-trust-stat-heading-color: #3c3c40;
+
+  /* ===== STAT BODY ===== */
+  --stats-trust-stat-body-font-family: "Proxima Nova", sans-serif;
+  --stats-trust-stat-body-font-size: 18px;
+  --stats-trust-stat-body-font-weight: 400;
+  --stats-trust-stat-body-line-height: 22px;
+  --stats-trust-stat-body-color: #3c3c40;
+
+  /* ===== CONTENT GAP ===== */
+  --stats-trust-content-gap: 8px;
+}
