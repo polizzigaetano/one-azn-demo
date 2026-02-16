@@ -1,4 +1,4 @@
 mountpoints:
   /:
-    url: https://content.da.live/aemysites/one-azn-demo/
+    url: https://content.da.live/polizzigaetano/one-azn-demo/
     type: markup
