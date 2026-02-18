@@ -366,6 +366,17 @@
           }
         },
         {
+          "title": "Like Save Share",
+          "id": "like-save-share",
+          "model": "like-save-share",
+          "plugins": {
+            "da": {
+              "name": "like-save-share",
+              "unsafeHTML": " "
+            }
+          }
+        },
+        {
           "title": "Listing",
           "id": "listing",
           "model": "listing",

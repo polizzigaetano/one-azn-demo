@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "title": "Like Save Share",
+      "id": "like-save-share",
+      "model": "like-save-share",
+      "plugins": {
+        "da": {
+          "name": "like-save-share",
+          "unsafeHTML": " "
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "like-save-share",
+      "fields": []
+    }
+  ],
+  "filters": []
+}
