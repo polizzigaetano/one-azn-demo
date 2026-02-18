@@ -3,20 +3,15 @@
     {
       "title": "Like Save Share",
       "id": "like-save-share",
-      "model": "like-save-share",
       "plugins": {
         "da": {
           "name": "like-save-share",
-          "unsafeHTML": " "
+          "rows": 0,
+          "columns": 0
         }
       }
     }
   ],
-  "models": [
-    {
-      "id": "like-save-share",
-      "fields": []
-    }
-  ],
+  "models": [],
   "filters": []
 }

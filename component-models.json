@@ -360,10 +360,6 @@
     ]
   },
   {
-    "id": "like-save-share",
-    "fields": []
-  },
-  {
     "id": "listing-card",
     "fields": [
       {
