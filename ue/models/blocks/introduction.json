@@ -1,0 +1,32 @@
+{
+  "definitions": [
+    {
+      "title": "Introduction",
+      "id": "introduction",
+      "model": "introduction",
+      "plugins": {
+        "da": {
+          "unsafeHTML": " ",
+          "fields": [
+            { "name": "text", "selector": "div>div" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "introduction",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

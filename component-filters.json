@@ -10,16 +10,29 @@
     "components": [
       "text",
       "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
       "accordion",
-      "tabs",
+      "accordion-section",
+      "cards",
+      "carousel",
+      "columns",
+      "columns-imagetop",
       "embed",
-      "quote"
+      "fragment",
+      "hero",
+      "introduction",
+      "listing",
+      "quote",
+      "search",
+      "table",
+      "tabs",
+      "teaser",
+      "video"
+    ]
+  },
+  {
+    "id": "accordion-section",
+    "components": [
+      "accordion-section-item"
     ]
   },
   {
@@ -41,18 +54,32 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "columns-imagetop",
     "components": [
-      "column"
+      "columns-imagetop-card"
     ]
   },
   {
-    "id": "column",
+    "id": "columns",
+    "components": [
+      "columns-row"
+    ]
+  },
+  {
+    "id": "columns-row",
+    "components": []
+  },
+  {
+    "id": "columns-cell",
     "components": [
       "text",
-      "image",
-      "button",
-      "title"
+      "image"
+    ]
+  },
+  {
+    "id": "listing",
+    "components": [
+      "listing-card"
     ]
   },
   {
@@ -80,13 +107,15 @@
     ]
   },
   {
+    "id": "table-5-columns",
+    "components": [
+      "table-col-5"
+    ]
+  },
+  {
     "id": "tabs",
     "components": [
       "tabs-item"
     ]
-  },
-  {
-    "id": "video",
-    "components": []
   }
 ]

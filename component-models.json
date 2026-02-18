@@ -40,110 +40,39 @@
     ]
   },
   {
-    "id": "title",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "titleType",
-        "label": "Title Type",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "button",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "section",
     "fields": [
       {
-        "component": "text",
-        "name": "name",
-        "label": "Section Name",
-        "description": "The label shown for this section in the Content Tree"
-      },
-      {
-        "component": "text",
+        "component": "multiselect",
         "name": "style",
         "label": "Style",
-        "valueType": "string"
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
       }
     ]
   },
   {
-    "id": "accordion",
+    "id": "accordion-section-item",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "classes",
-        "label": "Style"
+        "name": "summary",
+        "value": "",
+        "label": "Summary",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string",
+        "required": true
       }
     ]
   },
@@ -151,18 +80,20 @@
     "id": "accordion-item",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "summary",
         "value": "",
-        "label": "Summary"
+        "label": "Summary",
+        "required": true
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
         "label": "Text",
-        "valueType": "string"
+        "valueType": "string",
+        "required": true
       }
     ]
   },
@@ -170,10 +101,38 @@
     "id": "cards",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "multiselect",
         "name": "classes",
-        "label": "Style"
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Variant",
+            "children": [
+              {
+                "name": "Therapeutic",
+                "value": "therapeutic"
+              }
+            ]
+          },
+          {
+            "name": "Columns",
+            "children": [
+              {
+                "name": "2 Columns",
+                "value": "cols-2"
+              },
+              {
+                "name": "3 Columns",
+                "value": "cols-3"
+              },
+              {
+                "name": "4 Columns",
+                "value": "cols-4"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -181,17 +140,17 @@
     "id": "card",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt"
       },
       {
         "component": "richtext",
@@ -206,10 +165,29 @@
     "id": "carousel",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "multiselect",
         "name": "classes",
-        "label": "Style"
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Layout",
+            "children": [
+              {
+                "name": "Hero",
+                "value": "hero"
+              },
+              {
+                "name": "Image Left",
+                "value": "image-left"
+              },
+              {
+                "name": "Image Only",
+                "value": "image-only"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -217,30 +195,48 @@
     "id": "carousel-item",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
-      },
-      {
         "component": "reference",
         "valueType": "string",
-        "name": "media_image",
+        "name": "image",
         "label": "Background Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "media_imageAlt",
-        "value": "",
-        "label": "Bacgkround Alt"
+        "name": "imageAlt",
+        "label": "Background Image Alt"
       },
       {
         "component": "richtext",
-        "name": "content_text",
+        "name": "text",
         "value": "",
-        "label": "Text",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns-imagetop-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
         "valueType": "string"
       }
     ]
@@ -249,24 +245,15 @@
     "id": "columns",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
-      },
-      {
-        "component": "text",
+        "component": "number",
         "valueType": "number",
         "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
+        "label": "Number of Columns",
+        "value": 2,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 6
+        }
       }
     ]
   },
@@ -276,28 +263,28 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "classes",
-        "label": "Style"
+        "name": "embedUrl",
+        "label": "Embed URL",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "embedUrlText",
+        "label": "Embed URL Text"
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "embed_placeholder",
+        "name": "posterImage",
         "label": "Placeholder Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "embed_placeholderAlt",
-        "value": "",
-        "label": "Placeholder Image Alt Text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "embed_uri",
-        "label": "URI"
+        "name": "posterImageAlt",
+        "label": "Placeholder Image Alt"
       }
     ]
   },
@@ -306,26 +293,20 @@
     "fields": [
       {
         "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
+        "name": "urlText",
+        "label": "Fragment URL Text"
       },
       {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
+        "component": "text",
+        "name": "url",
+        "label": "Fragment URL",
+        "required": true
       }
     ]
   },
   {
     "id": "hero",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
-      },
       {
         "component": "reference",
         "valueType": "string",
@@ -346,27 +327,60 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Theme",
+            "children": [
+              {
+                "name": "Dark",
+                "value": "dark"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   {
-    "id": "modal",
+    "id": "introduction",
     "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "listing-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
       {
         "component": "text",
         "valueType": "string",
-        "name": "classes",
-        "label": "Style"
+        "name": "imageAlt",
+        "label": "Image Alt"
       },
       {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "Text"
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
@@ -374,17 +388,12 @@
     "id": "quote",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "classes",
-        "label": "Style"
-      },
-      {
         "component": "richtext",
         "valueType": "string",
         "name": "quotation",
         "value": "",
-        "label": "Quotation"
+        "label": "Quotation",
+        "required": true
       },
       {
         "component": "richtext",
@@ -400,14 +409,20 @@
     "fields": [
       {
         "component": "text",
+        "name": "searchUrlText",
+        "label": "Search URL Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
         "valueType": "string",
-        "name": "index",
-        "label": "Index"
+        "name": "searchUrl",
+        "label": "Search URL",
+        "required": true
       },
       {
         "component": "multiselect",
         "name": "classes",
-        "value": "",
         "label": "Options",
         "valueType": "string",
         "options": [
@@ -496,7 +511,7 @@
         "component": "richtext",
         "valueType": "string",
         "name": "column1text",
-        "label": "Column1"
+        "label": "Column 1"
       }
     ]
   },
@@ -507,13 +522,13 @@
         "component": "richtext",
         "valueType": "string",
         "name": "column1text",
-        "label": "Column1"
+        "label": "Column 1"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column2text",
-        "label": "Column2"
+        "label": "Column 2"
       }
     ]
   },
@@ -524,19 +539,19 @@
         "component": "richtext",
         "valueType": "string",
         "name": "column1text",
-        "label": "Column1"
+        "label": "Column 1"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column2text",
-        "label": "Column2"
+        "label": "Column 2"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column3text",
-        "label": "Column3"
+        "label": "Column 3"
       }
     ]
   },
@@ -547,36 +562,60 @@
         "component": "richtext",
         "valueType": "string",
         "name": "column1text",
-        "label": "Column1"
+        "label": "Column 1"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column2text",
-        "label": "Column2"
+        "label": "Column 2"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column3text",
-        "label": "Column3"
+        "label": "Column 3"
       },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "column4text",
-        "label": "Column4"
+        "label": "Column 4"
       }
     ]
   },
   {
-    "id": "tabs",
+    "id": "table-col-5",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "classes",
-        "label": "Style"
+        "name": "column1text",
+        "label": "Column 1"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2text",
+        "label": "Column 2"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3text",
+        "label": "Column 3"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column4text",
+        "label": "Column 4"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column5text",
+        "label": "Column 5"
       }
     ]
   },
@@ -584,16 +623,90 @@
     "id": "tabs-item",
     "fields": [
       {
-        "name": "tabName",
-        "value": "",
+        "component": "text",
+        "name": "name",
+        "valueType": "string",
         "label": "Tab Name"
       },
       {
         "component": "richtext",
         "name": "content",
-        "value": "",
         "label": "Content",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "brand",
+        "label": "Brand"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "CTA Text"
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Options",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Layout",
+            "children": [
+              {
+                "name": "Image Right",
+                "value": "image-right"
+              }
+            ]
+          },
+          {
+            "name": "Access",
+            "children": [
+              {
+                "name": "Blocked",
+                "value": "blocked"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -601,42 +714,29 @@
     "id": "video",
     "fields": [
       {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "uri",
-        "label": "Video"
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Options",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Auto Play",
-            "children": [
-              {
-                "name": "AutoPlay",
-                "value": "autoplay"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "placeholder_image",
-        "label": "Placeholder Image",
-        "multi": true
+        "component": "boolean",
+        "name": "classes_autoplay",
+        "label": "Autoplay Video",
+        "valueType": "boolean"
       },
       {
         "component": "text",
+        "name": "videoUrl",
+        "label": "Video URL",
         "valueType": "string",
-        "name": "placeholder_imageAlt",
-        "value": "",
-        "label": "Placeholder Image Alt Text"
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "videoUrlText",
+        "label": "Video URL Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "posterImage",
+        "label": "Poster Image",
+        "valueType": "string"
       }
     ]
   }
