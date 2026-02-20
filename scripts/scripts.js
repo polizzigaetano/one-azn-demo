@@ -140,10 +140,38 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+/**
+ * Handles assets selected via the Content Advisor sidekick palette.
+ * Copies the first asset's delivery URL to the clipboard and logs the full selection.
+ */
+function initContentAdvisorListener() {
+  window.addEventListener('message', (event) => {
+    if (event.data?.type !== 'content-advisor-selection') return;
+    const { assets } = event.data;
+    if (!assets || assets.length === 0) return;
+
+    // eslint-disable-next-line no-console
+    console.log('[Content Advisor] Selected assets:', assets);
+
+    const url = assets[0].dmUrl
+      || assets[0]['repo:path']
+      || assets[0].url
+      || '';
+
+    if (url && navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        // eslint-disable-next-line no-console
+        console.log('[Content Advisor] URL copied to clipboard:', url);
+      });
+    }
+  });
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  initContentAdvisorListener();
 }
 
 loadPage();

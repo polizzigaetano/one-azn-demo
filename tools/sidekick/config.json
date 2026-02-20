@@ -15,6 +15,21 @@
           ],
           "passConfig": true,
           "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+      },
+      {
+          "id": "content-advisor",
+          "title": "Content Advisor",
+          "environments": [
+              "preview",
+              "live",
+              "prod",
+              "dev"
+          ],
+          "url": "/tools/sidekick/content-advisor/content-advisor.html",
+          "isPalette": true,
+          "passConfig": true,
+          "passReferrer": true,
+          "paletteRect": "top: 50px; left: 5%; height: 80vh; width: 90vw;"
       }
   ]
 }
